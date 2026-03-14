@@ -1,0 +1,35 @@
+# Templates de variation pour génération quotidienne
+# Chaque catégorie = un type de contenu
+# Chaque entrée = un angle/sujet différent
+
+prompt_templates:
+  - "Practical prompt for daily AI workflow optimization"
+  - "Production-tested interaction pattern from real use"
+  - "Conversation framework for better AI collaboration"
+  - "Prompt design for getting multiple perspectives from AI"
+  - "Template for maintaining productive back-and-forth with AI"
+  - "Prompt pattern that preserves user decision-making autonomy"
+
+best_practices:
+  - "Lessons learned from using AI tools professionally"
+  - "What works and what doesnt in human-AI collaboration"
+  - "Guidelines for sustainable AI integration in daily work"
+  - "Balancing speed and depth in AI-assisted tasks"
+  - "When to trust AI output and when to push back"
+  - "Managing attention and cognitive load with AI tools"
+
+code_examples:
+  - "Helper script to improve AI conversation quality"
+  - "Utility for managing context in LLM interactions"
+  - "Tool for comparing multiple AI response approaches"
+  - "Script for structured AI-assisted decision making"
+  - "Simple tool for tracking AI interaction patterns over time"
+  - "Utility for breaking complex problems into AI-friendly chunks"
+
+discussions:
+  - "Reflections on attention economics in AI use"
+  - "Observations about efficiency vs depth tradeoffs"
+  - "Thoughts on maintaining productive tensions in AI work"
+  - "When AI convergence helps vs when it limits thinking"
+  - "The role of contradiction and uncertainty in better outcomes"
+  - "How daily AI use changes problem-solving habits"

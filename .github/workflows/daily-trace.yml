@@ -1,0 +1,44 @@
+# GitHub Action: Génération quotidienne de contenu
+# Se déclenche chaque jour à 9h UTC (10h Paris, 9h Lomé)
+# Peut aussi être lancé manuellement (workflow_dispatch)
+
+name: Daily Content Generation
+
+on:
+  schedule:
+    - cron: '0 9 * * *'    # Chaque jour à 9h UTC
+  workflow_dispatch:         # Permet lancement manuel (pour tester)
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Récupérer le code du repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Installer Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 3. Installer les dépendances
+      - name: Install dependencies
+        run: pip install anthropic pyyaml
+
+      # 4. Lancer le script de génération
+      - name: Generate content
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate.py
+
+      # 5. Commit et push le nouveau fichier
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Daily trace: $(date +%Y-%m-%d)"
+          git push
