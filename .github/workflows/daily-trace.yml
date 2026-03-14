@@ -31,7 +31,7 @@ jobs:
       # 4. Lancer le script de génération
       - name: Generate content
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.IRA_KEY }}
         run: python scripts/generate.py
 
       # 5. Commit et push le nouveau fichier
